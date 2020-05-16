@@ -1,20 +1,38 @@
 import React from 'react';
-import './App.css';
+import {
+  NavLink,
+  Switch,
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom';
+import styles from './styles/App.scss';
+import Add from './components/pages/Add/Add';
+import Home from './components/pages/Home/Home';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <NavLink to="/">Home</NavLink>
+            </li>
+            <li>
+              <NavLink to="/add">Add</NavLink>
+            </li>
+          </ul>
+        </nav>
+        <Switch>
+          <Route path="/add" exact>
+            <Add />
+          </Route>
+          <Route path="/" exact>
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
