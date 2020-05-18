@@ -2,7 +2,7 @@ import { applyMiddleware, compose, createStore } from 'redux';
 import logger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 import rootReducer from './reducers';
-import { loadAllFlights } from './sagas/saga';
+import { rootSaga } from './sagas/saga';
 
 const __DEV__ = process.env.NODE_ENV !== 'production';
 const sagaMiddleware = createSagaMiddleware();
@@ -23,4 +23,4 @@ export const store = createStore(
   compose(applyMiddleware(...middleware))
 );
 
-sagaMiddleware.run(loadAllFlights);
+sagaMiddleware.run(rootSaga);

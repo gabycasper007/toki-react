@@ -8,18 +8,17 @@ import Navigation from './components/molecules/Navigation/Navigation';
 function App() {
   return (
     <Router>
-      <Switch>
-        <div>
-          <Navigation />
-
+      <div>
+        <Navigation />
+        <Switch>
           <Route path="/add" exact>
             <Add />
           </Route>
           <Route path="/" exact>
             <Home />
           </Route>
-        </div>
-      </Switch>
+        </Switch>
+      </div>
     </Router>
   );
 }

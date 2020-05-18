@@ -1,4 +1,4 @@
-import { LOAD_ALL_FLIGHTS_ASYNC } from '../actions/types';
+import { LOAD_ALL_FLIGHTS_ASYNC, FILTERED_FLIGHTS } from '../actions/types';
 
 const initialState = {
   all: [],
@@ -11,6 +11,19 @@ const flightsReducer = (state = initialState, action) => {
       return {
         all: action.flights,
         filtered: []
+      };
+
+    case FILTERED_FLIGHTS:
+      const allFlights = state.all.map((flight) => ({ ...flight }));
+      return {
+        all: state.all.map((flight) => ({ ...flight })),
+        filtered: allFlights.filter(
+          (flight) =>
+            flight.arrival === action.payload.arrival &&
+            flight.departure === action.payload.departure &&
+            flight.arrivalDate === action.payload.arrivalDate &&
+            flight.departureDate === action.payload.departureDate
+        )
       };
 
     default:

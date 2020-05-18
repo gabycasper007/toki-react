@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { LOAD_ALL_FLIGHTS } from '../../../store/actions/types';
 import Search from '../../molecules/Search/Search';
+import Flights from '../../organisms/Flights/Flights';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -13,8 +14,8 @@ const Home = () => {
   return (
     <div className="container">
       <h1>Home</h1>
-
       <Search />
+      <Flights />
     </div>
   );
 };

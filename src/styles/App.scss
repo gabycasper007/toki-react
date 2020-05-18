@@ -66,6 +66,10 @@ button[type='submit'] {
   box-shadow: none;
   padding: 3px 20px;
   margin-top: 25px;
+
+  &[disabled] {
+    background-color: darkgrey;
+  }
 }
 
 nav {

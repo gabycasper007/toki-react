@@ -17,6 +17,7 @@ import { cities } from '../../../constants/cities';
 import 'react-calendar/dist/Calendar.css';
 import { formatDate, DEFAULT_DATE_FORMAT } from '../../../helpers/date';
 import style from './Search.module.scss';
+import { FILTER_FLIGHTS } from '../../../store/actions/types';
 
 const Search = () => {
   const dispatch = useDispatch();
@@ -34,7 +35,14 @@ const Search = () => {
   // console.log('arrivals', arrivals);
 
   const onSubmit = (values, { setSubmitting }) => {
-    console.log('Submitting form');
+    dispatch({
+      type: FILTER_FLIGHTS,
+      payload: {
+        ...values,
+        arrivalDate: formatDate(arrivalCalendar).toString(),
+        departureDate: formatDate(departCalendar).toString()
+      }
+    });
     setSubmitting(false);
   };
 
