@@ -23,3 +23,93 @@ html {
   margin-left: auto;
   max-width: 1140px;
 }
+
+.inputWrap {
+  margin-right: 15px;
+  position: relative;
+}
+label {
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+input {
+  padding: 10px 13px;
+}
+.inputWithLabel {
+  display: flex;
+  flex-direction: column;
+}
+select {
+  height: 44px;
+  width: 160px;
+}
+.inputWrap .react-calendar {
+  position: absolute;
+  left: 0;
+  top: 68px;
+  max-width: none;
+  z-index: 1;
+}
+
+.error {
+  color: crimson;
+  margin-top: 3px;
+}
+
+button[type='submit'] {
+  background-color: lightseagreen;
+  color: white;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  height: 42px;
+  box-shadow: none;
+  padding: 3px 20px;
+  margin-top: 25px;
+}
+
+nav {
+  margin-bottom: 50px;
+
+  ul {
+    margin: 30px 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+  }
+
+  li {
+    margin: 0 10px 0 0;
+    padding: 0;
+
+    a {
+      text-decoration: none;
+      background-color: darkorchid;
+      color: white;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      padding: 10px 20px;
+      border-radius: 3px;
+
+      span {
+        background-color: white;
+        color: darkorchid;
+        border-radius: 50%;
+        display: inline-block;
+        width: 22px;
+        text-align: center;
+        height: 22px;
+        font-size: 14px;
+        line-height: 22px;
+        position: relative;
+        top: -1px;
+        margin-left: 6px;
+      }
+
+      &:hover {
+        background-color: firebrick;
+      }
+    }
+  }
+}

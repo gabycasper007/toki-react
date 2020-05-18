@@ -1,7 +1,11 @@
 import React from 'react';
 
 const Add = () => {
-  return <h1>Add</h1>;
+  return (
+    <div className="container">
+      <h1>Add</h1>
+    </div>
+  );
 };
 
 export default Add;
